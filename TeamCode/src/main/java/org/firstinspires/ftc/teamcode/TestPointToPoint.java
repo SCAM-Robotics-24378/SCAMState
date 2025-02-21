@@ -19,9 +19,9 @@ import org.firstinspires.ftc.teamcode.PDFLController;
 @Config
 @TeleOp(group = "Test", name = "TestPointToPoint")
 public class TestPointToPoint extends LinearOpMode {
-    public static double pX = 0.0325, dX = 0.005, fX = 0.0, lX = 0.1;
-    public static double pY = 0.03, dY = 0.005, fY = 0.0, lY = 0.22;
-    public static double pH = 0.6, dH = 0.005, fH = 0.0, lH = 0.13;
+    public static double pX = 0, dX = 0, fX = 0, lX = 0;
+    public static double pY = 0, dY = 0, fY = 0, lY = 0;
+    public static double pH = 0, dH = 0, fH = 0, lH = 0;
     public static double targX, targY, targHead;
     private final double ROBOT_WIDTH = 15.5, ROBOT_LENGTH = 16.0, TILE_SIZE_IN = 23.75, HAlF_FIELD_LENGTH = 70.3;
     private final double HEADING_TOLERANCE_RAD = Math.toRadians(1.0), X_TOLERANCE = 0.25, Y_TOLERANCE = 0.25;
@@ -61,9 +61,9 @@ public class TestPointToPoint extends LinearOpMode {
         headingController = new PDFLController(pH, dH, fH, lH, HEADING_TOLERANCE_RAD);
 
         pinpoint = hardwareMap.get(GoBildaPinpointDriver.class, "pinpoint");
-        pinpoint.setEncoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD);
+        pinpoint.setEncoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_SWINGARM_POD);
         pinpoint.setEncoderDirections(GoBildaPinpointDriver.EncoderDirection.REVERSED, GoBildaPinpointDriver.EncoderDirection.FORWARD);
-        pinpoint.setOffsets(-90, 95);
+        pinpoint.setOffsets(-150, 135);
 
         targX = targetPose.getX(DistanceUnit.INCH);
         targY = targetPose.getY(DistanceUnit.INCH);
@@ -128,7 +128,6 @@ public class TestPointToPoint extends LinearOpMode {
         telemetry.addData("Target X", targetPose.getX(DistanceUnit.INCH));
         telemetry.addData("Target Y", targetPose.getY(DistanceUnit.INCH));
         telemetry.addData("Target Heading", targetPose.getHeading(AngleUnit.DEGREES));
-        telemetry.addData("HeadingPow", headingPow);
         telemetry.update();
     }
 
