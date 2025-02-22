@@ -23,6 +23,23 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url = 'https://maven.brott.dev/'
+    }
+    maven {
+        url = 'https://repo.dairy.foundation/releases'
+    }
+}
+
 dependencies {
     implementation project(':FtcRobotController')
+
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    implementation "com.acmerobotics.dashboard:dashboard:0.4.16"
 }
