@@ -94,14 +94,17 @@ public class Vera extends Robot {
 
     public void read() {
         veraHw.read();
+        drivetrain.read();
     }
 
     public void loop() {
         veraHw.loop();
+        drivetrain.loop();
     }
 
     public void write() {
         veraHw.write();
+        drivetrain.write();
         telemetry.update();
     }
 }
