@@ -11,8 +11,6 @@ import org.firstinspires.ftc.teamcode.subsystem.util.Point;
 @Autonomous(name = "BLUE | BUCKET", preselectTeleOp = "TeleOp")
 public class AutoBucket extends AutoBase {
 
-    private final Point specimenScorePoint = new Point(-5, -31, 90);
-
     @Override
     public void initialize() {
         super.initialize();
